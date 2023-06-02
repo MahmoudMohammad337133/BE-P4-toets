@@ -28,7 +28,6 @@
         <tbody>
             <?php foreach ($result as $row) { ?>
                 <tr>
-                    <!-- <td class="px-6 py-4 whitespace-nowrap"><?= $row->Id ?></td> -->
                     <td><?= $row->Naam ?></td>
                     <td><?= $row->Datum ?></td>
                     <td><?= $row->Rijbewijscategorie ?></td>
