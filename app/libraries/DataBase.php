@@ -7,7 +7,7 @@ class DataBase
     private $dbPass = DB_PASS;
     private $dbName = DB_NAME;
     private $dbHandler;
-    private $statement;
+    private $statment;
 
 
     public function  __construct()
@@ -26,20 +26,17 @@ class DataBase
 
     public function query($sql)
     {
-        $this->statement = $this->dbHandler->prepare($sql);
+        $this->statment = $this->dbHandler->prepare($sql);
     }
-    public function bind($param, $value)
-    {
-        $this->statement->bindValue($param, $value);
-    }
+
     public function excute()
     {
-        return $this->statement->execute();
+        return $this->statment->execute();
     }
 
     public function resultSet()
     {
         $this->excute();
-        return $this->statement->fetchAll(PDO::FETCH_OBJ);
+        return $this->statment->fetchAll(PDO::FETCH_OBJ);
     }
 }

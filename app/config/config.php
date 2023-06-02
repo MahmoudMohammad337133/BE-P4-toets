@@ -1,8 +1,8 @@
 <?php
 
-define('URLROOT', 'http://www.betoets.nl/');
+define('URLROOT', 'http://be-p4-toets.com/');
     
 define('DB_HOST', 'localhost');
 define('USERNAME', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'overzicht-examen');
+define('DB_NAME', 'rijschool-examen');
