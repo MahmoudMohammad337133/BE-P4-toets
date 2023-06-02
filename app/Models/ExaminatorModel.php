@@ -1,6 +1,6 @@
 <?php
 
-class instructeurGebruiktAutoModel
+class ExamenPerExaminatorModel
 {
     private $db;
 
@@ -8,23 +8,13 @@ class instructeurGebruiktAutoModel
     {
         $this->db = new Database();
     }
-    function getInstructeursCars($id)
+    function getExamenPerExaminator($id)
     {
         $sql = "
-            SELECT CONCAT(ins.Voornaam,' ', COALESCE(ins.Tussenvoegsel,''),' ', ins.Achternaam) as full_name, 
-            ins.DatumInDienst, 
-            ins.AantalSterren, 
-            typeVoer.TypeVoertuig, 
-            voer.Type, 
-            voer.Kenteken, 
-            voer.Bouwjaar, 
-            voer.Brandstof,
-            typeVoer.Rijbewijscategorie
-            FROM instructeur ins
-            left JOIN voertuiginstructeur voerin ON ins.Id = voerin.InstructeurId
-            left JOIN voertuig voer ON voerin.VoertuigId = voer.Id
-            left JOIN typevoertuig typeVoer ON voer.TypeVoertuigId = typeVoer.Id
-            WHERE ins.id = :id;
+                SELECT Examen.Id, Examen.StudentId, Examen.Rijschool, Examen.Stad, Examen.Rijbewijscategorie, Examen.Datum, Examen.Uitslag,
+                Examinator.Voornaam, Examinator.Tussenvoegsel, Examinator.Achternaam, Examinator.Mobiel
+                FROM Examen
+                INNER JOIN Examinator ON Examen.Id = Examinator.Id;
         ";
 
         $this->db->query($sql);

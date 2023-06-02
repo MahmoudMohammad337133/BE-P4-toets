@@ -1,6 +1,6 @@
 <?php
 
-class Examenodel
+class ExamenModel
 {
     private $db;
 

@@ -1,6 +1,6 @@
 <?php
 
-define('URLROOT', 'http://www.be-p4-opdracht-01.com');
+define('URLROOT', 'http://www.betoets.nl/');
     
 define('DB_HOST', 'localhost');
 define('USERNAME', 'root');

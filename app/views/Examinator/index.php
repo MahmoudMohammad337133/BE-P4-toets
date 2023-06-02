@@ -29,24 +29,20 @@
             <thead>
                 <tr>
                     <!-- <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Id</th> -->
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type voertuig</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kenteken</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Bouwjaar</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Brandstof</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rijbewijscategorie</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Voornaam</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tussenvoegsel</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Achternaam</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mobiel</th>
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
                 <?php foreach ($result as $row) : ?>
                     <tr>
                         <!-- <td class="px-6 py-4 whitespace-nowrap"><?= $row->Id ?></td> -->
-                        <td class="px-6 py-4 whitespace-nowrap"><?= $row->TypeVoertuig ?></td>
-                        <td class="px-6 py-4 whitespace-nowrap"><?= $row->Type ?></td>
-                        <td class="px-6 py-4 whitespace-nowrap"><?= $row->Kenteken ?></td>
-                        <td class="px-6 py-4 whitespace-nowrap"><?= $row->Bouwjaar ?></td>
-                        <td class="px-6 py-4 whitespace-nowrap"><?= $row->Brandstof ?></td>
-                        <td class="px-6 py-4 whitespace-nowrap"><?= $row->Rijbewijscategorie ?></td>
+                        <td class="px-6 py-4 whitespace-nowrap"><?= $row->Voornaam ?></td>
+                        <td class="px-6 py-4 whitespace-nowrap"><?= $row->Tussenvoegsel ?></td>
+                        <td class="px-6 py-4 whitespace-nowrap"><?= $row->Achternaam ?></td>
+                        <td class="px-6 py-4 whitespace-nowrap"><?= $row->Mobiel ?></td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
@@ -55,8 +51,6 @@
 
     <?php } else { ?>
         <h2 class="text-2xl">Naam: <?= $result[0]->full_name ?></h2>
-        <h2 class="text-2xl">Datum in dienst: <?= $result[0]->DatumInDienst ?></h2>
-        <h2 class="text-2xl">Datum in dienst: <?= $result[0]->AantalSterren ?></h2>
 
         <h1 class="text-2xl font-bold underline text-red-600 m-1">Er zijn op dit moment nog geen voertuigen toegewezen aan deze instructeur</h1>
 
@@ -65,7 +59,7 @@
 
 
     <?php echo 'Redirecting to "Instructeurs in dienst" screen...';
-        header("refresh:3; url=" .  URLROOT . "/instructeur/index");
+        header("refresh:3; url=" .  URLROOT . "/examen/index");
         exit;
     } ?>
 </body>

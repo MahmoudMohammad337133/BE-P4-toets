@@ -15,31 +15,30 @@
     <a class="underline text-blue-500" href="<?= URLROOT; ?>">Home</a>
     <?php $result = $data['result'] ?>
 
-    <h1 class="text-2xl mt-4">Aantal Instructeurs : <?= $result[0]->row_count?></h1>
+    <h1 class="text-2xl mt-4">Testdata Vulling Voor Tabellen: <?= $result[0]->row_count?></h1>
 
     <table class="min-w-full divide-y divide-gray-200">
         <thead>
             <tr>
                 <!-- <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Id</th> -->
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Voornaam</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tussenvoegsel</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Achternaam</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mobiel</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">DatumInDienst</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">AantalSterren</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Voortuig</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">StudentId</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rijschool</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stad</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Rijbewijscategorie</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Datum</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Uitslag</th>
             </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
             <?php foreach ($result as $row) : ?>
                 <tr>
                     <!-- <td class="px-6 py-4 whitespace-nowrap"><?= $row->Id ?></td> -->
-                    <td class="px-6 py-4 whitespace-nowrap"><?= $row->Voornaam ?></td>
-                    <td class="px-6 py-4 whitespace-nowrap"><?= $row->Tussenvoegsel ?></td>
-                    <td class="px-6 py-4 whitespace-nowrap"><?= $row->Achternaam ?></td>
-                    <td class="px-6 py-4 whitespace-nowrap"><?= $row->Mobiel ?></td>
-                    <td class="px-6 py-4 whitespace-nowrap"><?= $row->DatumInDienst ?></td>
-                    <td class="px-6 py-4 whitespace-nowrap"><?= $row->AantalSterren ?></td>
+                    <td class="px-6 py-4 whitespace-nowrap"><?= $row->StudentId ?></td>
+                    <td class="px-6 py-4 whitespace-nowrap"><?= $row->Rijschool ?></td>
+                    <td class="px-6 py-4 whitespace-nowrap"><?= $row->Stad ?></td>
+                    <td class="px-6 py-4 whitespace-nowrap"><?= $row->Rijbewijscategorie ?></td>
+                    <td class="px-6 py-4 whitespace-nowrap"><?= $row->Datum ?></td>
+                    <td class="px-6 py-4 whitespace-nowrap"><?= $row->Uitslag ?></td>
                     <td class="px-6 py-4 whitespace-nowrap">
                         <a href="<?= URLROOT; ?>/instructeurGebruiktAuto/index?id=<?= $row->Id ?>">
                             <img src="/public/car-icon" alt="car-icon">
